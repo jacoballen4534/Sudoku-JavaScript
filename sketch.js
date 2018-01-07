@@ -97,7 +97,7 @@ function setUp() {
         }
     }
 
-   // console.log(console.table(DoneGrid));
+    // console.log(console.table(DoneGrid));
     console.log(HowManyTimes);
     if (DoneGrid.length !== 0) {
         drawTable(DoneGrid);
@@ -113,7 +113,7 @@ function drawTable(doneGrid) {
         let text = "";
         let table = document.getElementById('table');
         for (let i = 0; i < 9; i++) {
-            text += '<tr height="20">';
+            text += '<tr>';
             for (let j = 0; j < 9; j++) {
                 text += '<td>' + '<input type="text" name="' + i + '' + j + '" maxlength="1" size="2" value="' + doneGrid[i][j] + '"/></td>';
             }
@@ -128,9 +128,18 @@ function inputTable() {
     let text = "";
     let table = document.getElementById('table');
     for(let i = 0; i < 9; i++){
-        text+='<tr height="20">';
+        if (i === 3 || i === 6) {
+            text+='<tr class="horizontalSep">';
+        } else {
+            text+='<tr>';
+        }
         for(let j = 0; j < 9; j++){
-            text+='<td>' + '<input type="text" name="'+i +'' +j +'" maxlength="1" size="2" value=""/></td>';
+            text+='<td';
+            if (j === 3 || j === 6) {
+                text+= ' class="verticalSep"';
+            }
+            text+= '><input type="text" name="'+i +'' +j +'" maxlength="1" size="2" value=""/></td>';
+
         }
         text+='</tr>';
     }
