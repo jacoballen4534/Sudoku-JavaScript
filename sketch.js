@@ -97,8 +97,8 @@ function setUp() {
         }
     }
 
-    // console.log(console.table(DoneGrid));
-    //console.log(HowManyTimes);
+    // console.table(DoneGrid);
+    // console.log(HowManyTimes);
     if (DoneGrid.length !== 0) {
         drawTable(DoneGrid);
     } else {

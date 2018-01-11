@@ -1,8 +1,8 @@
 function TryOption2(BackupPossible, GridSoFar, Full, ValidSoFar) {
     HowManyTimes++;
-    if (HowManyTimes % 1000 === 0) {
+    if (HowManyTimes % 50 === 0) {
         EndTime = (Date.now() - StartTime) / 1000;
-        if (EndTime > 5) {
+        if (EndTime > 2) {
             tooLong =  !(confirm("This may take some time. Press Ok if you wish to continue"));
 
             if (!tooLong) {
